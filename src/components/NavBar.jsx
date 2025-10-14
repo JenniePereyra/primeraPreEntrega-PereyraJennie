@@ -1,19 +1,19 @@
+import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget'
 
 function NavBar() {
     return (
         <header className="header-principal">
-
             <div className="titulo-principal">
                 <img src="/logoIco.png" alt="Logo de Biocon Laboratorios" className="logoIco" />
             </div>
 
-            <nav>
-                <ul>
-                    <li><a href="/">Perfiles</a></li>
-                    <li><a href="/">Sucursales</a></li>
-                    <li><a href="/">Contacto</a></li>
-                </ul>
+            <nav className="navbar">
+                <Link to="/">Inicio</Link>
+                <Link to="/categoria/analisis">Analisis</Link>
+                <Link to="/categoria/perfiles">Perfiles</Link>
+                <Link to="/sucursales">Sucursales</Link>
+                <Link to="/contacto">Contacto</Link>
             </nav>
 
             <button id="boton-carrito" aria-label="Abrir carrito">
@@ -25,5 +25,3 @@ function NavBar() {
 }
 
 export default NavBar
-
-

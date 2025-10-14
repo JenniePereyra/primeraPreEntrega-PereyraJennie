@@ -7,13 +7,12 @@
 }
 
 body {
+  font-family: 'Inter', Arial, sans-serif;
   background-color: #f8f9fa;
+  color: #222;
 }
 
-/*NAVBAR*/
-.logoIco { width: 3rem; 
-}
-
+/* NAVBAR */
 .header-principal {
   background-color: rgba(248, 249, 250, 0.98);
   color: #000;
@@ -21,6 +20,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #d9e0d5;
+}
+
+.logoIco {
+  width: 3rem;
 }
 
 .titulo-principal {
@@ -29,67 +33,198 @@ body {
   gap: 0.5rem;
   font-size: 1.5rem;
   font-weight: 600;
+  color: #425e31;
 }
 
-.header-principal nav ul {
-  list-style: none;
+nav {
   display: flex;
   gap: 1rem;
 }
 
-.header-principal nav ul li a {
+nav a {
   text-decoration: none;
   color: #425e31;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
-.header-principal nav ul li a:hover {
+nav a:hover {
   color: #66924a;
 }
 
-/*CARRITO ICONO*/
 #boton-carrito {
-  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
   background: none;
   border: none;
-  color: #000;
+  font-size: 1.3rem;
   cursor: pointer;
-  position: relative;
 }
 
 #contador-carrito {
-  position: absolute;
-  top: -8px;
-  right: -12px;
-  background-color: red;
-  color: white;
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: #66924a;
+  color: #fff;
   border-radius: 50%;
-  padding: 2px 6px;
-  min-width: 18px;
-  text-align: center;
+  padding: 0.1rem 0.4rem;
 }
 
-/*MAIN (CONTENEDOR SALUDO)*/
+/* MAIN */
 #main-productos {
-  min-height: 80vh;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  padding: 2rem;
 }
-
 
 #main-productos h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 0.5rem;
+  color: #425e31;
+  margin-bottom: 0.9rem;
 }
 
 #main-productos h3 {
-  font-size: 1.25rem;
-  color: #666;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+/* ITEM LIST */
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+/* ITEM CARD */
+.item-card {
+  background-color: #fff;
+  border: 1px solid #dfe5da;
+  border-radius: 12px;
+  padding: 1.2rem;
+  text-align: center;
+  width: 220px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.item-card h4 {
+  color: #425e31;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.item-card p {
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.item-card a {
+  text-decoration: none;
+  background-color: #425e31;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.item-card a:hover {
+  background-color: #66924a;
+}
+
+/* ITEM DETAIL */
+#main-detalle {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.item-detail {
+  background-color: #fff;
+  border: 1px solid #dfe5da;
+  border-radius: 16px;
+  padding: 2rem;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.item-detail h2 {
+  color: #425e31; 
+  margin-bottom: 0.8rem;
+  font-size: 1.8rem;
+}
+
+.item-detail-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.item-detail-categoria {
+  color: #555;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.item-detail-precio {
+  color: #425e31;
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.item-detail-descripcion {
+  color: #555;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.item-detail button {
+  background-color: #425e31;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.item-detail button:hover {
+  background-color: #66924a;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-principal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .item-list {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .item-detail {
+    width: 90%;
+  }
 }
